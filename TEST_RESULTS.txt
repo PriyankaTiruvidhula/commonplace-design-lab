@@ -1,0 +1,12 @@
+Commonplace design lab, 21 November 2026 CET
+Built with Instinct; candidate review pending.
+
+Build: npm run build, passed. Self-contained HTML produced.
+Logic: 6 tests passed.
+Browser: 8 tests passed, 0 unexpected failures.
+Chrome, Playwright; viewport checks 320/390/1280.
+
+Checked: case-insensitive search/topic filtering, empty-state recovery, save/unsave persistence, malformed/blocked storage, audience/channel template combinations, clipboard copy, task validation/progress, scripted assistant and calls to action.
+Visual review: desktop/mobile layouts and final CV/guide pages inspected.
+
+Limits: no interviews, no usability metrics, no full accessibility audit, no cross-browser certification, no real AI inference, no live campaign, no production readiness claim.
