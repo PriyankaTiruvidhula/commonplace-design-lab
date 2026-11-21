@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'.',testMatch:'ui.spec.mjs',workers:1,use:{baseURL:'http://127.0.0.1:4173',launchOptions:{executablePath:process.env.CHROME_PATH||'/opt/google/chrome/chrome',args:['--no-sandbox']}},webServer:{command:'python3 -m http.server 4173 --bind 127.0.0.1',url:'http://127.0.0.1:4173',reuseExistingServer:false},reporter:[['list'],['json',{outputFile:'test-results.json'}]]});
