@@ -1,0 +1,22 @@
+{
+  "name": "commonplace-design-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Three assisted React design/web prototypes, candidate review pending",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "test:logic": "node --test models.test.mjs",
+    "test:ui": "playwright test",
+    "test": "npm run test:logic && npm run test:ui"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "esbuild": "0.28.2"
+  }
+}
