@@ -24,7 +24,7 @@ Open http://127.0.0.1:4173. Node 22 and Python 3 were used for this review. No A
 
 ## Included portfolio and assets
 
-- [Seven-page portfolio](4-Priyanka_Commonplace_Portfolio.pdf): seven-page portfolio with concept user flow, low-fidelity wireframe and actual screenshots.
+- [Seven-page portfolio](1-Priyanka_Commonplace_Portfolio.pdf): seven-page portfolio with concept user flow, low-fidelity wireframe and actual screenshots.
 - `logo.svg`, `5-banner-1.png`, `6-banner-2.png`: wordmark and promotional visuals.
 - Desktop/mobile screenshots are included as root-level PNG files with numeric upload prefixes and names showing view and viewport width. UI tests write new captures into `screenshots/`.
 - `package.json`, `package-lock.json`, `playwright.config.mjs`: pinned dependencies, scripts and browser-test setup.
