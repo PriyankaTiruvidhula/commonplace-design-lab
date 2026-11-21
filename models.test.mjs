@@ -1,0 +1,7 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import{resources,filterResources,campaignCopy,safeLoad,safeSave}from'./models.mjs';
+test('all resources, case-insensitive and trimmed search',()=>{assert.equal(filterResources(resources).length,4);assert.equal(filterResources(resources,'  CHECK-IN ').length,1)});
+test('combined topic and search and empty state',()=>{assert.equal(filterResources(resources,'guide','Knowledge').length,0);assert.equal(filterResources(resources,'','Learning').length,2)});
+test('all audience and channel combinations have distinct copy',()=>{const copy=[];for(const a of['Team leads','Individual learners'])for(const c of['LinkedIn','Web headline','Event card'])copy.push(campaignCopy(a,c));assert.equal(new Set(copy).size,6);assert(copy.every(s=>s.length>70))});
+test('malformed or stale saved data is normalized',()=>{for(const s of['broken','null','{}'])assert.deepEqual(safeLoad({getItem:()=>s}),[]);assert.deepEqual(safeLoad({getItem:()=>JSON.stringify([1,1,999,'2'])}),[1])});
+test('unavailable storage fails safely',()=>{const storage={getItem(){throw Error('blocked')},setItem(){throw Error('blocked')}};assert.deepEqual(safeLoad(storage),[]);assert.equal(safeSave([1],storage),false)});
+test('save/load roundtrip',()=>{let s='';const storage={setItem(k,v){s=v},getItem(){return s}};assert(safeSave([2,4],storage));assert.deepEqual(safeLoad(storage),[2,4])});
